@@ -4,6 +4,7 @@ RUN apt update && apt install -y \
     curl \
     cpio \
     rpm2cpio \
+    git \
     && apt clean autoclean \
     && apt autoremove -y
 
