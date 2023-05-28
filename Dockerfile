@@ -1,5 +1,9 @@
 FROM ubuntu:22.04
 
+ENV TZ=Europe/Berlin
+ENV LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8
+
 RUN apt update && apt install -y \
     curl \
     cpio \
@@ -10,4 +14,4 @@ RUN apt update && apt install -y \
 
 RUN curl -s https://raw.githubusercontent.com/apptainer/apptainer/main/tools/install-unprivileged.sh | bash -s - /usr/local/
 
-ENTRYPOINT ["/usr/local/bin/apptainer"]
+ENTRYPOINT ["/bin/sh", "-c"]
